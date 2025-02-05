@@ -1,0 +1,247 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: #ffccd5; /* Fondo suave color rosa */
+  font-family: "Arial", sans-serif;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hearts {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  transform: rotate(-45deg);
+  animation: float 3s infinite linear;
+  z-index: -1;
+}
+
+.hearts::before, .hearts::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.hearts::before {
+  top: -25px;
+  left: 0;
+}
+
+.hearts::after {
+  left: 25px;
+  top: 0;
+}
+
+#heart1 {
+  top: 50%;
+  left: 10%;
+}
+
+#heart2 {
+  top: 20%;
+  left: 80%;
+}
+
+#heart3 {
+  top: 70%;
+  left: 60%;
+}
+
+#heart4 {
+  top: 10%;
+  left: 40%;
+}
+
+/* Animación para los corazones */
+@keyframes float {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-45deg) translate(10px, 10px);
+  }
+  100% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+.content {
+  z-index: 1;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+svg {
+  width: 500px;
+  height: 600px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 20px;
+  font-family: "Comfortaa", sans-serif;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+button#btn-happy {
+  background-color: #eb584d;
+}
+button#btn-happy:hover {
+  background-color: #e62d1f;
+}
+button#btn-cool {
+  background-color: #007185;
+}
+button#btn-cool:hover {
+  background-color: #004652;
+}
+button#btn-sexy {
+  background-color: #e5004e;
+}
+button#btn-sexy:hover {
+  background-color: #b2003d;
+}
+button#btn-crazy {
+  background-color: #883277;
+}
+button#btn-crazy:hover {
+  background-color: #632456;
+}
+
+button:last-child {
+  margin-right: 0;
+}
+
+button:focus {
+  outline: none;
+  border: 0;
+}
+
+.a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff4d6d;
+  margin: 0 auto;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(255, 77, 109, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.a:hover {
+  background-color: #d43f5e;
+  box-shadow: 0 6px 14px rgba(212, 63, 94, 0.5);
+  transform: scale(1.05);
+}
+
+/* Animación de corazones */
+.a::before {
+  content: "❤️";
+  position: absolute;
+  left: 10%;
+  top: -10px;
+  font-size: 14px;
+  animation: float-hearts 1.5s infinite ease-in-out;
+}
+
+.a::after {
+  content: "💖";
+  position: absolute;
+  right: 10%;
+  bottom: -10px;
+  font-size: 14px;
+  animation: float-hearts 2s infinite ease-in-out alternate;
+}
+
+@keyframes float-hearts {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1.5); /* Corazón comienza grande */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px) scale(0.5); /* Corazón cae y se hace pequeño */
+    opacity: 0;
+  }
+}
+/* Responsive */
+@media (max-width: 600px) {
+  .a {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+.heart {
+  position: absolute;
+  font-size: 30px; /* Aumentamos el tamaño de los corazones */
+  animation: float-up 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+h1 {
+  color: #ff3366; /* Texto color San Valentín */
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.contents {
+  z-index: 1;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */
